@@ -1,0 +1,54 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  userID        Int @id @default(autoincrement())
+  name          String
+  email         String @unique
+  createAt      DateTime
+  updateAt      DateTime
+  // negotiationId            negotiation @relation( filds: [negotiationId], references: [negotiationId])
+}
+
+model negotiation {
+  negotiationId   Int @id @default(autoincrement())
+  createAt        DateTime
+  updateAt        DateTime 
+}
+
+model offer {
+  offerId         Int @id @default(autoincrement())
+  createAt        DateTime
+  updateAt        DateTime
+}
+
+model payment {
+  paymentId       Int @id @default(autoincrement())
+  createAt        DateTime
+  updateAt        DateTime
+}
+
+model invate {
+  invateId        Int @id @default(autoincrement())
+  createAt        DateTime
+  updateAt        DateTime
+}
+
+model messages {
+  messageId      Int @id @default(autoincrement())
+  createAt        DateTime 
+  updateAt        DateTime
+}
+
+model shipping  {
+  shippingId      Int @id @default(autoincrement())
+  createAt        DateTime
+  updateAt        DateTime
+}
