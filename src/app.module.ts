@@ -10,7 +10,12 @@ import { OfferModule } from './offer/offer.module';
 import { InvateModule } from './invate/invate.module';
 import { MessagesModule } from './messages/messages.module';
 import { ShippingModule } from './shipping/shipping.module';
-
+import { AuthModule } from './auth/auth.module';
+import { AppController } from './app.controller';
+import { AuthService } from './auth/auth.service';
+import { UserService } from './user/user.service';
+import { JwtService } from '@nestjs/jwt';
+import { JwtStrategy } from './auth/jwt.strategy';
 @Module({
   imports: [
     ConfigModule.forRoot(), 
@@ -21,8 +26,17 @@ import { ShippingModule } from './shipping/shipping.module';
     OfferModule, 
     InvateModule, 
     MessagesModule, 
-    ShippingModule],
-  controllers: [],
-  providers: [],
+    ShippingModule, 
+    AuthModule,
+  ],
+  controllers: [AppController],
+  providers: [
+    AuthService,
+    UserService,
+    JwtService,
+    JwtStrategy
+  ],
 })
+
+
 export class AppModule {}

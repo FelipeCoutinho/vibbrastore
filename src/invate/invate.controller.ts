@@ -18,17 +18,17 @@ export class InvateController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.invateService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.invateService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateInvateDto: UpdateInvateDto) {
-    return this.invateService.update(+id, updateInvateDto);
+  update(@Param('id') id: number, @Body() updateInvateDto: UpdateInvateDto) {
+    return this.invateService.update(id, updateInvateDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.invateService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.invateService.remove(id);
   }
 }
