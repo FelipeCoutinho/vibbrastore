@@ -12,8 +12,17 @@ import { MessagesModule } from './messages/messages.module';
 import { ShippingModule } from './shipping/shipping.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), PrismaModule, PaymentModule, UserModule, NegotiationModule, OfferModule, InvateModule, MessagesModule, ShippingModule],
+  imports: [
+    ConfigModule.forRoot(), 
+    UserModule, 
+    PrismaModule, 
+    PaymentModule, 
+    NegotiationModule, 
+    OfferModule, 
+    InvateModule, 
+    MessagesModule, 
+    ShippingModule],
   controllers: [],
-  providers: [,],
+  providers: [],
 })
 export class AppModule {}
