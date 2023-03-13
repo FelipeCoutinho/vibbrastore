@@ -15,7 +15,7 @@ import { AppController } from './app.controller';
 import { AuthService } from './auth/auth.service';
 import { UserService } from './user/user.service';
 import { JwtService } from '@nestjs/jwt';
-import { JwtStrategy } from './auth/jwt.strategy';
+import { JwtStrategy } from './auth/jwt/jwt.strategy';
 @Module({
   imports: [
     ConfigModule.forRoot(), 
