@@ -7,13 +7,11 @@ export class UserService {
   
   private readonly users = [
     {
-      userId: 1,
-      username: 'john',
-      password: 'changeme',
-    },
+      "login": "john",
+      "password": "changeme"
+  },
     {
-      userId: 2,
-      username: 'maria',
+      login: 'maria',
       password: 'guess',
     },
   ];
@@ -27,7 +25,7 @@ export class UserService {
   }
 
   findOne(username) {
-    return this.users.find(user => user.username === username);
+    return this.users.find(user => user.login === username);
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

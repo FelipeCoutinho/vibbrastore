@@ -11,7 +11,6 @@ import { InvateModule } from './invate/invate.module';
 import { MessagesModule } from './messages/messages.module';
 import { ShippingModule } from './shipping/shipping.module';
 import { AuthModule } from './auth/auth.module';
-import { AppController } from './app.controller';
 import { AuthService } from './auth/auth.service';
 import { UserService } from './user/user.service';
 import { JwtService } from '@nestjs/jwt';
@@ -29,7 +28,7 @@ import { JwtStrategy } from './auth/jwt/jwt.strategy';
     ShippingModule, 
     AuthModule,
   ],
-  controllers: [AppController],
+  controllers: [],
   providers: [
     AuthService,
     UserService,
