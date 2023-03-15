@@ -19,6 +19,13 @@ model user {
 
 model negotiation {
   negotiationId   Int @id @default(autoincrement())
+  type            Int
+  value           Float 
+  description     String
+  trade_for       String
+  location        Json
+  urgency         String
+  photos          Json[]
   createAt        DateTime
   updateAt        DateTime 
 }
