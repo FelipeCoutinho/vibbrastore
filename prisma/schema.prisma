@@ -12,9 +12,12 @@ model user {
   userID        Int @id @default(autoincrement())
   name          String
   email         String @unique
+  login         String
+  password      String
+  location      Json 
   createAt      DateTime
   updateAt      DateTime
-  // negotiationId            negotiation @relation( filds: [negotiationId], references: [negotiationId])
+  // negotiationId            negotiation @relation( filds: [negotiationId] references: [negotiationId])
 }
 
 model negotiation {
@@ -32,6 +35,13 @@ model negotiation {
 
 model offer {
   offerId         Int @id @default(autoincrement())
+  type            String
+  value           Float
+  description     String    
+  trade_for       String
+  location        Json
+  urgency         Int
+  photos          String[]
   createAt        DateTime
   updateAt        DateTime
 }
@@ -50,8 +60,11 @@ model invate {
 
 model messages {
   messageId      Int @id @default(autoincrement())
-  createAt        DateTime 
-  updateAt        DateTime
+  user_id        Int
+  title          String
+  message        String
+  createAt       DateTime 
+  updateAt       DateTime
 }
 
 model shipping  {
